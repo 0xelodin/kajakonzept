@@ -1,0 +1,267 @@
+/* KajaKonzept — Stylesheet
+   Keine externen Ressourcen (keine Google Fonts, kein CDN):
+   damit fallen Drittland-Transfers in der Datenschutzerklärung weg. */
+
+:root {
+  --paper:      #fbfaf8;
+  --ink:        #16202b;
+  --ink-soft:   #4e5a67;
+  --rule:       #ded9d0;
+  --signal:     #a63a28;
+  --code-bg:    #131c25;
+  --code-fg:    #d8dee6;
+  --code-dim:   #7c8b9a;
+
+  --sans: ui-sans-serif, "Inter", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --measure: 34rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-kerning: normal;
+}
+
+.wrap {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+p, li { max-width: var(--measure); }
+
+a {
+  color: var(--signal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
+/* ---------- Kopfzeile ---------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1.75rem 0 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.wordmark {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  text-decoration: none;
+}
+.wordmark span { color: var(--signal); }
+
+.masthead nav {
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+}
+.masthead nav a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-left: 1.25rem;
+}
+.masthead nav a:first-child { margin-left: 0; }
+.masthead nav a:hover { color: var(--signal); }
+
+/* ---------- Hero ---------- */
+
+.hero { padding: 3.5rem 0 3rem; }
+
+.hero h1 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem;
+  max-width: 18ch;
+}
+
+.lede {
+  font-size: 1.1875rem;
+  color: var(--ink-soft);
+  margin: 0 0 2.25rem;
+}
+
+/* Illustratives Terminal-Fragment */
+.evidence {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  padding: 1.25rem 1.25rem;
+  border-radius: 3px;
+  overflow-x: auto;
+  margin: 0;
+}
+.evidence .dim  { color: var(--code-dim); }
+.evidence .flag { color: #e8917f; }
+
+.evidence-note {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  margin: 0.75rem 0 0;
+}
+
+/* ---------- Abschnitte ---------- */
+
+section { padding: 2.75rem 0; border-top: 1px solid var(--rule); }
+
+h2 {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.015em;
+  margin: 0 0 1.25rem;
+}
+
+h3 {
+  font-family: var(--sans);
+  font-weight: 650;
+  font-size: 1rem;
+  margin: 0 0 0.35rem;
+}
+
+/* Leistungen */
+.offer { margin: 0 0 2rem; }
+.offer:last-child { margin-bottom: 0; }
+.offer p { margin: 0; color: var(--ink-soft); }
+.offer .scope {
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  margin-top: 0.5rem;
+}
+
+/* Fähigkeiten */
+.skills {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0.9rem 1.5rem;
+  align-items: baseline;
+}
+.skills dt {
+  font-family: var(--sans);
+  font-weight: 650;
+  font-size: 0.9375rem;
+}
+.skills dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+/* Befundliste im Praxis-Abschnitt */
+.findings {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  font-size: 0.9375rem;
+}
+.findings li {
+  padding-left: 1.4rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+  color: var(--ink-soft);
+}
+.findings li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.55rem;
+  height: 0.55rem;
+  background: var(--signal);
+}
+
+/* Zertifikate */
+.creds { margin: 0; padding: 0; list-style: none; }
+.creds li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.9375rem;
+}
+.creds li:first-child { padding-top: 0; }
+.creds .issuer {
+  font-family: var(--sans);
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  display: block;
+}
+
+/* Kontakt */
+.contact-line {
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  margin: 0.5rem 0 0;
+}
+
+/* ---------- Fuß ---------- */
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding: 2rem 0 3rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  justify-content: space-between;
+}
+footer a { color: var(--ink-soft); }
+
+/* ---------- Rechtstexte ---------- */
+
+.legal h1 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.875rem;
+  letter-spacing: -0.02em;
+  margin: 3rem 0 1.5rem;
+}
+.legal h2 { margin-top: 2.25rem; }
+.legal { padding-bottom: 3rem; }
+.legal .todo {
+  background: #fdf3e7;
+  border-left: 3px solid var(--signal);
+  padding: 0.75rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  max-width: var(--measure);
+}
+
+/* ---------- Klein ---------- */
+
+@media (max-width: 34rem) {
+  .skills { grid-template-columns: 1fr; gap: 0.25rem; }
+  .skills dd { margin-bottom: 0.85rem; }
+}

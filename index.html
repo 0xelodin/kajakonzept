@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KajaKonzept — Websicherheit aus Entwicklersicht</title>
+<meta name="description" content="Sicherheitsprüfungen für Webanwendungen, durchgeführt von einem Fullstack-Entwickler. Manuelles Testen der Anwendungslogik statt Scanner-Report.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="wordmark" href="./">Kaja<span>Konzept</span></a>
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#praxis">Praxis</a>
+      <a href="#faehigkeiten">Fähigkeiten</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Sicherheitsprüfungen für Webanwendungen.</h1>
+    <p class="lede">
+      Ich bin Fullstack-Entwickler und prüfe Webanwendungen auf Schwachstellen.
+      Der Unterschied zu einem automatisierten Scan: Ich lese die Anwendungslogik,
+      statt nur Signaturen abzugleichen.
+    </p>
+
+<pre class="evidence"><code>HTTP/2 200
+<span class="dim">server:</span> nginx
+<span class="dim">content-type:</span> text/html; charset=UTF-8
+<span class="dim">set-cookie:</span> SESSID=8f2a…; Path=/
+<span class="flag">   ↑ ohne Secure, HttpOnly und SameSite</span>
+<span class="flag">   ↑ keine Content-Security-Policy</span>
+<span class="flag">   ↑ kein Strict-Transport-Security</span></code></pre>
+    <p class="evidence-note">
+      Header sind der einfachste Teil. Die teuren Funde liegen darunter:
+      in Berechtigungsprüfungen, Objektreferenzen und Session-Handling.
+    </p>
+  </div>
+
+  <section id="leistungen">
+    <h2>Was ich anbiete</h2>
+
+    <div class="offer">
+      <h3>Web-App Security Quick-Check</h3>
+      <p>
+        Kompakte Prüfung einer Anwendung gegen die häufigsten und teuersten
+        Fehlerklassen: Zugriffskontrolle, Authentifizierung, Session-Handling,
+        Eingabeverarbeitung, Konfiguration.
+      </p>
+      <p class="scope">
+        Ergebnis: Bericht mit reproduzierbaren Schritten, Risikoeinschätzung und
+        konkreten Fixes im Code — nicht nur „Header fehlt“.
+      </p>
+    </div>
+
+    <div class="offer">
+      <h3>Web-Application-Pentest</h3>
+      <p>
+        Ausführlicher, meist als Grey-Box mit Testzugängen über alle Rollen hinweg.
+        Schwerpunkt auf Logikfehlern, die nur findet, wer versteht, was die
+        Anwendung eigentlich tun soll.
+      </p>
+      <p class="scope">
+        Methodisch orientiert am OWASP Web Security Testing Guide und am
+        BSI-Durchführungskonzept für Penetrationstests.
+      </p>
+    </div>
+
+    <div class="offer">
+      <h3>Angriffsfläche &amp; Konfiguration</h3>
+      <p>
+        Prüfung dessen, was von außen sichtbar ist: exponierte Verzeichnisse und
+        Repositories, TLS-Konfiguration, Security-Header, verräterische
+        Versionsangaben, offene Dienste.
+      </p>
+    </div>
+  </section>
+
+  <section id="praxis">
+    <h2>Praxis</h2>
+    <h3>Interner Penetrationstest, Kundenserver (anonymisiert)</h3>
+    <p>
+      Beauftragte zweitägige Prüfung eines ausgemusterten Anwendungsservers.
+      Aufklärung mit nmap, whatweb, gobuster und testssl, anschließend manuelle
+      Prüfung der Anwendung. Über ein öffentlich erreichbares
+      <code>.git/</code>-Verzeichnis ließ sich der komplette Quellcode
+      rekonstruieren.
+    </p>
+    <ul class="findings">
+      <li>Persistentes Cross-Site-Scripting</li>
+      <li>Insecure Direct Object References — Zugriff auf fremde Datensätze</li>
+      <li>Datei-Upload ohne Typ- und Pfadprüfung</li>
+      <li>Fehlerhafte Verarbeitung von JSON Web Tokens</li>
+      <li>Offengelegtes Repository, fehlende Security-Header</li>
+    </ul>
+    <p style="margin-top:1.25rem">
+      Dokumentiert als nachvollziehbarer Bericht mit Reproduktionsschritten und
+      priorisierten Maßnahmen. Für die Aufklärungsphase habe ich mir eigenes
+      Werkzeug gebaut (<code>recon.sh</code>, <code>parse_findings.py</code>),
+      um Ergebnisse verschiedener Tools zusammenzuführen.
+    </p>
+  </section>
+
+  <section id="faehigkeiten">
+    <h2>Fähigkeiten</h2>
+    <dl class="skills">
+
+      <dt>Entwicklung</dt>
+      <dd>PHP, JavaScript, TypeScript, Angular, Node.js — drei Jahre
+          Berufserfahrung an einer produktiv genutzten Cloud-Anwendung</dd>
+
+      <dt>Datenbanken</dt>
+      <dd>MySQL, PostgreSQL</dd>
+
+      <dt>Betrieb</dt>
+      <dd>Linux, Docker, Apache, nginx, Reverse-Proxy- und
+          TLS-Konfiguration</dd>
+
+      <dt>Netzwerk</dt>
+      <dd>VLAN-Segmentierung auf Managed Switches, Firewall-Regeln mit ufw und
+          iptables, DNS-Filterung, Wireguard-basierte Fernzugriffe</dd>
+
+      <dt>Sicherheitstests</dt>
+      <dd>Manuelles Testen von Webanwendungen entlang des OWASP Web Security
+          Testing Guide, Burp Suite, nmap, gobuster, testssl, git-dumper</dd>
+
+      <dt>Schwachstellen</dt>
+      <dd>Zugriffskontrolle und IDOR, XSS, unsichere Datei-Uploads,
+          JWT- und Session-Fehler, offengelegte Repositories und
+          Konfigurationsdateien</dd>
+
+      <dt>Automatisierung</dt>
+      <dd>Bash und Python für Aufklärung und Auswertung, Auswertung von
+          System- und Zugriffslogs</dd>
+
+      <dt>Hardware</dt>
+      <dd>Firmware-Austausch auf ESP8266/ESP32, Analyse und Umbau von
+          IoT-Geräten</dd>
+
+      <dt>Dokumentation</dt>
+      <dd>Berichte, die Entwickler direkt umsetzen können — Fund,
+          Reproduktion, Risiko, Fix</dd>
+
+    </dl>
+  </section>
+
+  <section id="qualifikation">
+    <h2>Qualifikation</h2>
+    <ul class="creds">
+      <!-- TODO: exakte Bezeichnungen deiner beiden TryHackMe-Zertifikate eintragen,
+           inkl. Jahr und Link auf das öffentliche Zertifikat. -->
+      <li>
+        NAME DES ZERTIFIKATS
+        <span class="issuer">TryHackMe · JAHR</span>
+      </li>
+      <li>
+        NAME DES ZERTIFIKATS
+        <span class="issuer">TryHackMe · JAHR</span>
+      </li>
+      <li>
+        Fachinformatiker Anwendungsentwicklung — TODO: nur stehen lassen, wenn zutreffend
+        <span class="issuer">Ausbildung</span>
+      </li>
+    </ul>
+    <p style="margin-top:1.5rem">
+      Laufend: Vorbereitung auf das OSCP (Offensive Security Certified Professional).
+      Ich schreibe das erst auf diese Seite, wenn ich es bestanden habe.
+    </p>
+  </section>
+
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>
+      Wenn Sie wissen wollen, wie Ihre Anwendung gegen die üblichen Angriffe
+      dasteht: kurze Mail mit ein paar Sätzen zur Anwendung genügt. Ich melde
+      mich mit Rückfragen und einem Vorschlag zum Umfang.
+    </p>
+    <!-- TODO: echte Adresse eintragen -->
+    <p class="contact-line"><a href="mailto:DEINE@MAILADRESSE.DE">DEINE@MAILADRESSE.DE</a></p>
+  </section>
+
+  <footer>
+    <span>KajaKonzept · Tübingen</span>
+    <span>
+      <a href="impressum.html">Impressum</a> ·
+      <a href="datenschutz.html">Datenschutz</a>
+    </span>
+  </footer>
+
+</div>
+
+</body>
+</html>
