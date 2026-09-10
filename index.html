@@ -121,19 +121,14 @@
     <h2>Durchgeführte Prüfungen</h2>
     <p class="section-lede">
       Beides beauftragte, schriftlich autorisierte Prüfungen an produktiv
-      eingesetzten Anwendungen — keine Übungsumgebungen. Anonymisiert
-      dargestellt.
+      eingesetzten Anwendungen — keine Übungsumgebungen.
     </p>
     <h3>Penetrationstest einer Webanwendung — zwei Tage</h3>
     <p>
-      Beauftragte Prüfung eines Anwendungsservers. Zwei Funde
-      waren dabei nur durch Lesen zu finden. In den
-      ausgelieferten Angular-Dateien lagen Zugangsdaten, die einen Zugriff auf
-      das dahinterliegende System erlaubten. Und über ein öffentlich
-      erreichbares <code>.git/</code>-Verzeichnis ließ sich der vollständige
-      Quellcode rekonstruieren. Beide Funde konnte ich umgehend an den Kunden melden
-      und das Entwicklerteam konnte die Lücken durch meine Anweisung innerhalb
-      weniger Minuten schließen.
+      Beauftragte Prüfung eines Anwendungsservers. Zwei kritische Funde
+      waren dabei nur durch Lesen zu finden. Diese konnte ich umgehend 
+      melden. Das Entwicklerteam konnte die Lücken durch meine Anweisung
+      innerhalb weniger Minuten schließen.
     </p>
     <ul class="findings">
       <li>Im Frontend hinterlegte Zugangsdaten mit Systemzugriff</li>
@@ -162,7 +157,7 @@
     <p style="margin-top:1.5rem">
       Beide Prüfungen dokumentiert als nachvollziehbarer Bericht mit
       Reproduktionsschritten und priorisierten Maßnahmen. Für die
-      Aufklärungsphase habe ich mir eigenes Werkzeug gebaut
+      Aufklärungsphase habe ich eigene Skripte gebaut
       (<code>recon.sh</code>, <code>parse_findings.py</code>), um Ergebnisse
       verschiedener Tools zusammenzuführen.
     </p>
