@@ -1,6 +1,6 @@
 /* KajaKonzept — Stylesheet
-   Keine externen Ressourcen (keine Google Fonts, kein CDN),
-   Drittland-Transfers in der Datenschutzerklärung weg. */
+   Keine externen Ressourcen (keine Google Fonts, kein CDN):
+   damit fallen Drittland-Transfers in der Datenschutzerklärung weg. */
 
 :root {
   --paper:      #fbfaf8;
@@ -185,6 +185,14 @@ h3 {
   color: var(--ink-soft);
   font-size: 0.9375rem;
   line-height: 1.6;
+}
+
+/* Einleitungszeile unter einer Abschnittsüberschrift */
+.section-lede {
+  font-family: var(--sans);
+  font-size: 0.9375rem;
+  color: var(--ink-soft);
+  margin: -0.5rem 0 2rem;
 }
 
 /* Zweiter Fall im Praxis-Abschnitt */
