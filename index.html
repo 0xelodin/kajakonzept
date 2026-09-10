@@ -131,7 +131,9 @@
       ausgelieferten Angular-Dateien lagen Zugangsdaten, die einen Zugriff auf
       das dahinterliegende System erlaubten. Und über ein öffentlich
       erreichbares <code>.git/</code>-Verzeichnis ließ sich der vollständige
-      Quellcode rekonstruieren.
+      Quellcode rekonstruieren. Beide Funde konnte ich umgehend an den Kunden melden
+      und das Entwicklerteam konnte die Lücken durch meine Anweisung innerhalb
+      weniger Minuten schließen.
     </p>
     <ul class="findings">
       <li>Im Frontend hinterlegte Zugangsdaten mit Systemzugriff</li>
@@ -144,14 +146,14 @@
     <h3 class="case">Prüfung einer zweiten Anwendung — ein Tag</h3>
     <p>
       Schwerpunkt auf Authentifizierung, Sitzungsverwaltung und
-      Berechtigungsprüfung. Schwerwiegendster Befund: Die Funktion zum
-      Zurücksetzen des Passworts vergab sofort ein neues Passwort, ohne die
-      Identität des Anfragenden zu bestätigen. Damit ließ sich das Konto einer
+      Berechtigungsprüfung. Schwerwiegendster Befund: Durch Ausnutzung eines
+      unbedachten Edge-Case im Session-Handling, konnte die Funktion zum Zurücksetzen
+      des Passworts manipuliert werden. Damit ließ sich das Konto einer
       beliebigen anderen Person übernehmen — ohne Kenntnis der bisherigen
       Zugangsdaten.
     </p>
     <ul class="findings">
-      <li>Kontoübernahme über die Passwort-Zurücksetzung ohne Identitätsprüfung</li>
+      <li>Kontoübernahme über Session Manipulation und Passwort-Zurücksetzung</li>
       <li>Übernahme fremder Sitzungen durch fehlerhaftes Session-Handling</li>
       <li>Teilweise Bearbeitung von Datensätzen nur im Frontend
           durchgesetzt — serverseitig ließen sich Einträge ändern.
