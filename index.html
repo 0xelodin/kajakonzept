@@ -41,7 +41,29 @@
       in Berechtigungsprüfungen, Objektreferenzen und Session-Handling.
     </p>
   </div>
-
+  
+  <section id="ki-code" class="hook">
+    <h2>Code, der schnell entstanden ist</h2>
+    <p class="hook-open">
+      Ein großer Teil neuer Anwendungen entsteht heute mit KI-Unterstützung.
+      Das Ergebnis läuft meist einwandfrei — und genau das ist das Problem:
+      Funktionale Tests schlagen nicht an, wenn eine Berechtigungsprüfung fehlt.
+    </p>
+    <p>
+      Modelle erzeugen zuverlässig plausiblen Code, aber sie kennen Ihr
+      Rollenmodell nicht. Sie wissen nicht, welcher Datensatz wem gehört,
+      welche Prüfung im Backend statt im Frontend gehören würde, und welche
+      Annahme aus dem letzten Sprint inzwischen nicht mehr gilt. Was dabei
+      entsteht, sind selten exotische Lücken, sondern die teuren Klassiker:
+      fehlende Zugriffskontrolle, ungeprüfte Objektreferenzen, Validierung
+      nur auf der Oberfläche.
+    </p>
+    <p>
+      Ich prüfe solchen Code gegen die Logik, die er eigentlich abbilden
+      soll — manuell, entlang Ihres Rollen- und Berechtigungsmodells.
+    </p>
+  </section>
+  
   <section id="leistungen">
     <h2>Was ich anbiete</h2>
 
@@ -81,15 +103,40 @@
     </div>
   </section>
 
+  <div class="offer">
+      <h3>Von der Meldung zum geschlossenen Befund</h3>
+      <p>
+        Ein Bericht, den niemand umsetzt, hat nichts verbessert. Deshalb endet
+        meine Arbeit nicht beim Fund. Zu jeder Schwachstelle liefere ich eine
+        Anweisung, die Ihr Team direkt umsetzen kann: an welcher Stelle im Code
+        die Ursache liegt, was sich ändern muss, und woran Sie erkennen, dass es
+        wirkt. Formuliert so, dass sie auch trägt, wenn Ihre Entwickler dabei
+        mit KI-Werkzeugen arbeiten — die Anweisung enthält den Kontext, den ein
+        Modell braucht, um nicht am Symptom herumzureparieren.
+      </p>
+      <p style="margin-top:1rem">
+        Danach prüfe ich nach. Kritische Befunde teste ich innerhalb von vier
+        Wochen kostenfrei erneut. Erst danach ist ein Befund geschlossen, und
+        erst dann können Sie das gegenüber Ihren Kunden oder Ihrem Auditor auch
+        belegen.
+      </p>
+      <p class="scope">
+        Welche Werkzeuge Sie dabei einsetzen, entscheiden Sie. Falls interne
+        Richtlinien, ISO 27001 oder TISAX die Weitergabe von Quellcode an
+        externe Dienste einschränken, klären wir das vorher.
+      </p>
+    </div>
+  </section>
+  
   <section id="praxis">
     <h2>Praxis</h2>
     <h3>Interner Penetrationstest, Kundenserver (anonymisiert)</h3>
     <p>
-      Beauftragte zweitägige Prüfung eines ausgemusterten Anwendungsservers.
+      Beauftragte zweitägige Prüfung eines Anwendungsservers.
       Aufklärung mit nmap, whatweb, gobuster und testssl, anschließend manuelle
       Prüfung der Anwendung. Über ein öffentlich erreichbares
-      <code>.git/</code>-Verzeichnis ließ sich der komplette Quellcode
-      rekonstruieren.
+      <code>.git/</code>-Verzeichnis ließ sich der komplette Quellcode mit
+      weiteren Tools rekonstruieren.
     </p>
     <ul class="findings">
       <li>Persistentes Cross-Site-Scripting</li>
@@ -97,6 +144,7 @@
       <li>Datei-Upload ohne Typ- und Pfadprüfung</li>
       <li>Fehlerhafte Verarbeitung von JSON Web Tokens</li>
       <li>Offengelegtes Repository, fehlende Security-Header</li>
+      <li>Credentials für automatisierte</li>
     </ul>
     <p style="margin-top:1.25rem">
       Dokumentiert als nachvollziehbarer Bericht mit Reproduktionsschritten und
@@ -109,43 +157,47 @@
   <section id="faehigkeiten">
     <h2>Fähigkeiten</h2>
     <dl class="skills">
-
+ 
       <dt>Entwicklung</dt>
       <dd>PHP, JavaScript, TypeScript, Angular, Node.js — drei Jahre
           Berufserfahrung an einer produktiv genutzten Cloud-Anwendung</dd>
-
+ 
       <dt>Datenbanken</dt>
       <dd>MySQL, PostgreSQL</dd>
-
+ 
       <dt>Betrieb</dt>
       <dd>Linux, Docker, Apache, nginx, Reverse-Proxy- und
           TLS-Konfiguration</dd>
-
+ 
       <dt>Netzwerk</dt>
       <dd>VLAN-Segmentierung auf Managed Switches, Firewall-Regeln mit ufw und
           iptables, DNS-Filterung, Wireguard-basierte Fernzugriffe</dd>
-
+ 
       <dt>Sicherheitstests</dt>
       <dd>Manuelles Testen von Webanwendungen entlang des OWASP Web Security
           Testing Guide, Burp Suite, nmap, gobuster, testssl, git-dumper</dd>
-
+ 
       <dt>Schwachstellen</dt>
       <dd>Zugriffskontrolle und IDOR, XSS, unsichere Datei-Uploads,
           JWT- und Session-Fehler, offengelegte Repositories und
           Konfigurationsdateien</dd>
-
+ 
+      <dt>Analyse</dt>
+      <dd>Auswertung von System-, Zugriffs- und Windows-Ereignisprotokollen,
+          Active-Directory-Grundlagen, forensische Grundlagen</dd>
+ 
       <dt>Automatisierung</dt>
-      <dd>Bash und Python für Aufklärung und Auswertung, Auswertung von
-          System- und Zugriffslogs</dd>
-
+      <dd>Bash und Python für Aufklärung und Auswertung eigener
+          Prüfwerkzeuge</dd>
+ 
       <dt>Hardware</dt>
       <dd>Firmware-Austausch auf ESP8266/ESP32, Analyse und Umbau von
           IoT-Geräten</dd>
-
+ 
       <dt>Dokumentation</dt>
       <dd>Berichte, die Entwickler direkt umsetzen können — Fund,
           Reproduktion, Risiko, Fix</dd>
-
+ 
     </dl>
   </section>
 
@@ -153,16 +205,27 @@
     <h2>Qualifikation</h2>
     <ul class="creds">
       <li>
-        SEC-0 Pre-Security
-        <span class="issuer">TryHackMe · 2026</span>
+        Cyber Security 101 (SEC1) — bestandene Prüfung
+        <span class="issuer">TryHackMe · JAHR · Lernpfad vollständig absolviert</span>
       </li>
       <li>
-        SEC-1 Security 101
-        <span class="issuer">TryHackMe · 2026</span>
+        Pre Security (SEC0) — bestandene Prüfung
+        <span class="issuer">TryHackMe · JAHR · Lernpfad vollständig absolviert</span>
+      </li>
+      <li>
+        Fachinformatiker Anwendungsentwicklung — TODO: nur stehen lassen, wenn zutreffend
+        <span class="issuer">Ausbildung</span>
       </li>
     </ul>
     <p style="margin-top:1.5rem">
-      Laufend: Vorbereitung auf das OSCP (Offensive Security Certified Professional).
+      Beide Prüfungen sind praktisch aufgebaut: gelöst wird in Laborumgebungen,
+      nicht im Multiple-Choice-Verfahren. Inhaltlich reichen sie von Netzwerk-
+      und Web-Grundlagen über Angriffstechniken bis zu Log-Auswertung,
+      Active Directory und forensischer Analyse.
+    </p>
+    <p style="margin-top:1rem">
+      Laufend: AI Security (AI1) sowie Vorbereitung auf das OSCP. Beides trage
+      ich hier erst ein, wenn es bestanden ist.
     </p>
   </section>
 
@@ -173,9 +236,7 @@
       dasteht: kurze Mail mit ein paar Sätzen zur Anwendung genügt. Ich melde
       mich mit Rückfragen und einem Vorschlag zum Umfang.
     </p>
-    <p class="contact-line"><a href="mailto:kajakonzept@proton.me">kajakonzept@proton.me</a></p>
-  </section>
-
+    
   <footer>
     <span>KajaKonzept · Tübingen</span>
     <span>
