@@ -117,17 +117,21 @@
       </p>
     </div>
   </section>
-  <section id="praxis">
-    <h2>Praxis</h2>
-    <h3>Interner Penetrationstest, Kundenserver (anonymisiert)</h3>
+<section id="praxis">
+    <h2>Durchgeführte Prüfungen</h2>
+    <p class="section-lede">
+      Beides beauftragte, schriftlich autorisierte Prüfungen an produktiv
+      eingesetzten Anwendungen — keine Übungsumgebungen. Anonymisiert
+      dargestellt.
+    </p>
+    <h3>Penetrationstest einer Webanwendung — zwei Tage</h3>
     <p>
-      Beauftragte zweitägige Prüfung eines Anwendungsservers.
-      Aufklärung mit nmap, whatweb, gobuster und testssl, anschließend manuelle
-      Prüfung der Anwendung. In den ausgelieferten Angular-Dateien lagen Credentials
-      die einen Zugriff auf das System erlaubten. Und über ein öffentlich
+      Beauftragte Prüfung eines Anwendungsservers. Zwei Funde
+      waren dabei nur durch Lesen zu finden. In den
+      ausgelieferten Angular-Dateien lagen Zugangsdaten, die einen Zugriff auf
+      das dahinterliegende System erlaubten. Und über ein öffentlich
       erreichbares <code>.git/</code>-Verzeichnis ließ sich der vollständige
-      Quellcode rekonstruieren. Diese konnte ich umgehend melden
-      und die Entwickler die Lücken sofort schließen.
+      Quellcode rekonstruieren.
     </p>
     <ul class="findings">
       <li>Im Frontend hinterlegte Zugangsdaten mit Systemzugriff</li>
@@ -139,11 +143,20 @@
     </ul>
     <h3 class="case">Prüfung einer zweiten Anwendung — ein Tag</h3>
     <p>
-      Kompakte Prüfung mit Schwerpunkt auf Authentifizierung und
-      Sitzungsverwaltung. Durch Ausnutzung eines Edge-Case, konnten Formularfelder
-      für die Verifizierung von Logindaten manipuliert und damit umgangen werden.
-      Das Session-Handling erlaubte auch die Übernahme fremder Sitzungen.
+      Schwerpunkt auf Authentifizierung, Sitzungsverwaltung und
+      Berechtigungsprüfung. Schwerwiegendster Befund: Die Funktion zum
+      Zurücksetzen des Passworts vergab sofort ein neues Passwort, ohne die
+      Identität des Anfragenden zu bestätigen. Damit ließ sich das Konto einer
+      beliebigen anderen Person übernehmen — ohne Kenntnis der bisherigen
+      Zugangsdaten.
     </p>
+    <ul class="findings">
+      <li>Kontoübernahme über die Passwort-Zurücksetzung ohne Identitätsprüfung</li>
+      <li>Übernahme fremder Sitzungen durch fehlerhaftes Session-Handling</li>
+      <li>Teilweise Bearbeitung von Datensätzen nur im Frontend
+          durchgesetzt — serverseitig ließen sich Einträge ändern.
+      </li>
+    </ul
     <p style="margin-top:1.5rem">
       Beide Prüfungen dokumentiert als nachvollziehbarer Bericht mit
       Reproduktionsschritten und priorisierten Maßnahmen. Für die
