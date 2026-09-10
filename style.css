@@ -1,6 +1,6 @@
 /* KajaKonzept — Stylesheet
-   Keine externen Ressourcen (keine Google Fonts, kein CDN):
-   damit fallen Drittland-Transfers in der Datenschutzerklärung weg. */
+   Keine externen Ressourcen (keine Google Fonts, kein CDN),
+   Drittland-Transfers in der Datenschutzerklärung weg. */
 
 :root {
   --paper:      #fbfaf8;
@@ -148,6 +148,14 @@ h3 {
   margin: 0 0 0.35rem;
 }
 
+/* Aufhänger-Abschnitt */
+.hook p { margin: 0 0 1rem; }
+.hook p:last-child { margin-bottom: 0; }
+.hook .hook-open {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
 /* Leistungen */
 .offer { margin: 0 0 2rem; }
 .offer:last-child { margin-bottom: 0; }
@@ -178,6 +186,9 @@ h3 {
   font-size: 0.9375rem;
   line-height: 1.6;
 }
+
+/* Zweiter Fall im Praxis-Abschnitt */
+h3.case { margin-top: 2.25rem; }
 
 /* Befundliste im Praxis-Abschnitt */
 .findings {
