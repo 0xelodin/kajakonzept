@@ -8,9 +8,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="wrap">
-
   <header class="masthead">
     <a class="wordmark" href="./">Kaja<span>Konzept</span></a>
     <nav>
@@ -20,7 +18,6 @@
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
-
   <div class="hero">
     <h1>Sicherheitsprüfungen für Webanwendungen.</h1>
     <p class="lede">
@@ -28,7 +25,6 @@
       Der Unterschied zu einem automatisierten Scan: Ich lese die Anwendungslogik,
       statt nur Signaturen abzugleichen.
     </p>
-
 <pre class="evidence"><code>HTTP/2 200
 <span class="dim">server:</span> nginx
 <span class="dim">content-type:</span> text/html; charset=UTF-8
@@ -41,7 +37,6 @@
       in Berechtigungsprüfungen, Objektreferenzen und Session-Handling.
     </p>
   </div>
-  
   <section id="ki-code" class="hook">
     <h2>Code, der schnell entstanden ist</h2>
     <p class="hook-open">
@@ -63,10 +58,8 @@
       soll — manuell, entlang Ihres Rollen- und Berechtigungsmodells.
     </p>
   </section>
-  
   <section id="leistungen">
     <h2>Was ich anbiete</h2>
-
     <div class="offer">
       <h3>Web-App Security Quick-Check</h3>
       <p>
@@ -76,10 +69,9 @@
       </p>
       <p class="scope">
         Ergebnis: Bericht mit reproduzierbaren Schritten, Risikoeinschätzung und
-        konkreten Fixes im Code — nicht nur „Header fehlt“.
+        konkreten Fixes im Code — nicht nur „Der Header fehlt“.
       </p>
     </div>
-
     <div class="offer">
       <h3>Web-Application-Pentest</h3>
       <p>
@@ -92,7 +84,6 @@
         BSI-Durchführungskonzept für Penetrationstests.
       </p>
     </div>
-
     <div class="offer">
       <h3>Angriffsfläche &amp; Konfiguration</h3>
       <p>
@@ -102,7 +93,6 @@
       </p>
     </div>
   </section>
-
   <div class="offer">
       <h3>Von der Meldung zum geschlossenen Befund</h3>
       <p>
@@ -115,7 +105,7 @@
         Modell braucht, um nicht am Symptom herumzureparieren.
       </p>
       <p style="margin-top:1rem">
-        Danach prüfe ich nach. Kritische Befunde teste ich innerhalb von vier
+        Danach prüfe ich gerne nach. Kritische Befunde teste ich innerhalb von vier
         Wochen kostenfrei erneut. Erst danach ist ein Befund geschlossen, und
         erst dann können Sie das gegenüber Ihren Kunden oder Ihrem Auditor auch
         belegen.
@@ -127,81 +117,77 @@
       </p>
     </div>
   </section>
-  
   <section id="praxis">
     <h2>Praxis</h2>
     <h3>Interner Penetrationstest, Kundenserver (anonymisiert)</h3>
     <p>
       Beauftragte zweitägige Prüfung eines Anwendungsservers.
       Aufklärung mit nmap, whatweb, gobuster und testssl, anschließend manuelle
-      Prüfung der Anwendung. Über ein öffentlich erreichbares
-      <code>.git/</code>-Verzeichnis ließ sich der komplette Quellcode mit
-      weiteren Tools rekonstruieren.
+      Prüfung der Anwendung. In den ausgelieferten Angular-Dateien lagen Credentials
+      die einen Zugriff auf das System erlaubten. Und über ein öffentlich
+      erreichbares <code>.git/</code>-Verzeichnis ließ sich der vollständige
+      Quellcode rekonstruieren. Diese konnte ich umgehend melden
+      und die Entwickler die Lücken sofort schließen.
     </p>
     <ul class="findings">
+      <li>Im Frontend hinterlegte Zugangsdaten mit Systemzugriff</li>
       <li>Persistentes Cross-Site-Scripting</li>
       <li>Insecure Direct Object References — Zugriff auf fremde Datensätze</li>
       <li>Datei-Upload ohne Typ- und Pfadprüfung</li>
       <li>Fehlerhafte Verarbeitung von JSON Web Tokens</li>
       <li>Offengelegtes Repository, fehlende Security-Header</li>
-      <li>Credentials für automatisierte</li>
     </ul>
-    <p style="margin-top:1.25rem">
-      Dokumentiert als nachvollziehbarer Bericht mit Reproduktionsschritten und
-      priorisierten Maßnahmen. Für die Aufklärungsphase habe ich mir eigenes
-      Werkzeug gebaut (<code>recon.sh</code>, <code>parse_findings.py</code>),
-      um Ergebnisse verschiedener Tools zusammenzuführen.
+    <h3 class="case">Prüfung einer zweiten Anwendung — ein Tag</h3>
+    <p>
+      Kompakte Prüfung mit Schwerpunkt auf Authentifizierung und
+      Sitzungsverwaltung. Durch Ausnutzung eines Edge-Case, konnten Formularfelder
+      für die Verifizierung von Logindaten manipuliert und damit umgangen werden.
+      Das Session-Handling erlaubte auch die Übernahme fremder Sitzungen.
+    </p>
+    <p style="margin-top:1.5rem">
+      Beide Prüfungen dokumentiert als nachvollziehbarer Bericht mit
+      Reproduktionsschritten und priorisierten Maßnahmen. Für die
+      Aufklärungsphase habe ich mir eigenes Werkzeug gebaut
+      (<code>recon.sh</code>, <code>parse_findings.py</code>), um Ergebnisse
+      verschiedener Tools zusammenzuführen.
     </p>
   </section>
-
   <section id="faehigkeiten">
     <h2>Fähigkeiten</h2>
     <dl class="skills">
- 
       <dt>Entwicklung</dt>
       <dd>PHP, JavaScript, TypeScript, Angular, Node.js — drei Jahre
           Berufserfahrung an einer produktiv genutzten Cloud-Anwendung</dd>
- 
       <dt>Datenbanken</dt>
       <dd>MySQL, PostgreSQL</dd>
- 
       <dt>Betrieb</dt>
       <dd>Linux, Docker, Apache, nginx, Reverse-Proxy- und
           TLS-Konfiguration</dd>
- 
       <dt>Netzwerk</dt>
       <dd>VLAN-Segmentierung auf Managed Switches, Firewall-Regeln mit ufw und
           iptables, DNS-Filterung, Wireguard-basierte Fernzugriffe</dd>
- 
       <dt>Sicherheitstests</dt>
       <dd>Manuelles Testen von Webanwendungen entlang des OWASP Web Security
           Testing Guide, Burp Suite, nmap, gobuster, testssl, git-dumper</dd>
- 
       <dt>Schwachstellen</dt>
       <dd>Zugriffskontrolle und IDOR, XSS, unsichere Datei-Uploads,
           JWT- und Session-Fehler, offengelegte Repositories und
           Konfigurationsdateien</dd>
- 
       <dt>Analyse</dt>
       <dd>Auswertung von System-, Zugriffs- und Windows-Ereignisprotokollen,
           Active-Directory-Grundlagen, forensische Grundlagen</dd>
- 
       <dt>Automatisierung</dt>
       <dd>Bash und Python für Aufklärung und Auswertung eigener
           Prüfwerkzeuge</dd>
- 
       <dt>Hardware</dt>
       <dd>Firmware-Austausch auf ESP8266/ESP32, Analyse und Umbau von
           IoT-Geräten</dd>
- 
       <dt>Dokumentation</dt>
       <dd>Berichte, die Entwickler direkt umsetzen können — Fund,
           Reproduktion, Risiko, Fix</dd>
- 
     </dl>
   </section>
-
-  <section id="qualifikation">
+   <section id="qualifikation">
     <h2>Qualifikation</h2>
     <ul class="creds">
       <li>
@@ -228,15 +214,13 @@
       ich hier erst ein, wenn es bestanden ist.
     </p>
   </section>
-
   <section id="kontakt">
     <h2>Kontakt</h2>
     <p>
       Wenn Sie wissen wollen, wie Ihre Anwendung gegen die üblichen Angriffe
-      dasteht: kurze Mail mit ein paar Sätzen zur Anwendung genügt. Ich melde
+      dasteht: eine kurze Mail mit ein paar Sätzen zur Anwendung genügt. Ich melde
       mich mit Rückfragen und einem Vorschlag zum Umfang.
     </p>
-    
   <footer>
     <span>KajaKonzept · Tübingen</span>
     <span>
@@ -244,8 +228,6 @@
       <a href="datenschutz.html">Datenschutz</a>
     </span>
   </footer>
-
 </div>
-
 </body>
 </html>
