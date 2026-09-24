@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KajaKonzept — Websicherheit aus Entwicklersicht</title>
+<title>KajaKonzept - Websicherheit aus Entwicklersicht</title>
 <meta name="description" content="Sicherheitsprüfungen für Webanwendungen, durchgeführt von einem Fullstack-Entwickler. Manuelles Testen der Anwendungslogik statt Scanner-Report.">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -21,7 +21,7 @@
   <div class="hero">
     <h1>Sicherheitsprüfungen für Webanwendungen.</h1>
     <p class="lede">
-      Ich bin Fullstack-Entwickler und prüfe Webanwendungen auf Schwachstellen.
+      Ich bin Fullstack-Entwickler und Application Security Engineer und prüfe Webanwendungen auf Schwachstellen.
       Der Unterschied zu einem automatisierten Scan: Ich lese die Anwendungslogik,
       statt nur Signaturen abzugleichen.
     </p>
@@ -41,12 +41,12 @@
     <h2>Code, der schnell entstanden ist</h2>
     <p class="hook-open">
       Ein großer Teil neuer Anwendungen entsteht heute mit KI-Unterstützung.
-      Das Ergebnis läuft meist einwandfrei — und genau das ist das Problem:
+      Das Ergebnis läuft meist einwandfrei - und genau das ist das Problem:
       Funktionale Tests schlagen nicht an, wenn eine Berechtigungsprüfung fehlt.
     </p>
     <p>
       Modelle erzeugen zuverlässig plausiblen Code, aber sie kennen Ihr
-      Rollenmodell nicht. Sie wissen nicht, welcher Datensatz wem gehört,
+      Rollenmodell oftmals nicht. Sie wissen nicht, welcher Datensatz wem gehört,
       welche Prüfung ins Backend statt ins Frontend gehören würde, und welche
       Annahmen aus dem letzten Sprint inzwischen nicht mehr gelten. Was dabei
       entsteht, sind selten exotische Lücken, sondern die teuren Klassiker:
@@ -55,7 +55,7 @@
     </p>
     <p>
       Ich prüfe Code gegen die Logik, die er eigentlich abbilden
-      soll — manuell, entlang Ihres Rollen- und Berechtigungsmodells.
+      soll - manuell, entlang Ihres Rollen- und Berechtigungsmodells.
     </p>
   </section>
   <section id="leistungen">
@@ -69,7 +69,7 @@
       </p>
       <p class="scope">
         Ergebnis: Bericht mit reproduzierbaren Schritten, Risikoeinschätzung und
-        konkreten Fixes im Code — nicht nur „Der Header fehlt“.
+        konkreten Fixes im Code - nicht nur „Der Header fehlt“.
       </p>
     </div>
     <div class="offer">
@@ -101,7 +101,7 @@
         Anweisung, die Ihr Team direkt umsetzen kann: an welcher Stelle im Code
         die Ursache liegt, was sich ändern muss, und woran Sie erkennen, dass es
         wirkt. Formuliert so, dass sie auch trägt, wenn Ihre Entwickler dabei
-        mit KI-Werkzeugen arbeiten — die Anweisung enthält den Kontext, den ein
+        mit KI-Werkzeugen arbeiten - die Anweisung enthält den Kontext, den ein
         Modell braucht, um nicht am Symptom herumzureparieren.
       </p>
       <p style="margin-top:1rem">
@@ -121,9 +121,9 @@
     <h2>Durchgeführte Prüfungen</h2>
     <p class="section-lede">
       Beides beauftragte, schriftlich autorisierte Prüfungen an produktiv
-      eingesetzten Anwendungen — keine Übungsumgebungen.
+      eingesetzten Anwendungen - keine Übungsumgebungen.
     </p>
-    <h3>Penetrationstest einer Webanwendung — zwei Tage</h3>
+    <h3>Penetrationstest einer Webanwendung - zwei Tage</h3>
     <p>
       Beauftragte Prüfung eines Anwendungsservers. Zwei kritische Funde
       waren dabei nur durch Lesen zu finden. Diese konnte ich umgehend 
@@ -133,25 +133,25 @@
     <ul class="findings">
       <li>Im Frontend hinterlegte Zugangsdaten mit Systemzugriff</li>
       <li>Persistentes Cross-Site-Scripting</li>
-      <li>Insecure Direct Object References — Zugriff auf fremde Datensätze</li>
+      <li>Insecure Direct Object References - Zugriff auf fremde Datensätze</li>
       <li>Datei-Upload ohne Typ- und Pfadprüfung</li>
       <li>Fehlerhafte Verarbeitung von JSON Web Tokens</li>
       <li>Offengelegtes Repository, fehlende Security-Header</li>
     </ul>
-    <h3 class="case">Prüfung einer zweiten Anwendung — ein Tag</h3>
+    <h3 class="case">Prüfung einer zweiten Anwendung - ein Tag</h3>
     <p>
       Schwerpunkt auf Authentifizierung, Sitzungsverwaltung und
       Berechtigungsprüfung. Schwerwiegendster Befund: Durch Ausnutzung eines
       unbedachten Edge-Case im Session-Handling, konnte die Funktion zum Zurücksetzen
       des Passworts manipuliert werden. Damit ließ sich das Konto einer
-      beliebigen anderen Person übernehmen — ohne Kenntnis der bisherigen
+      beliebigen anderen Person übernehmen - ohne Kenntnis der bisherigen
       Zugangsdaten.
     </p>
     <ul class="findings">
       <li>Kontoübernahme über Session Manipulation und Passwort-Zurücksetzung</li>
       <li>Übernahme fremder Sitzungen durch fehlerhaftes Session-Handling</li>
       <li>Teilweise Bearbeitung von Datensätzen nur im Frontend
-          durchgesetzt — serverseitig ließen sich Einträge ändern.
+          durchgesetzt - serverseitig ließen sich Einträge ändern.
       </li>
     </ul
     <p style="margin-top:1.5rem">
@@ -166,7 +166,7 @@
     <h2>Fähigkeiten</h2>
     <dl class="skills">
       <dt>Entwicklung</dt>
-      <dd>PHP, JavaScript, TypeScript, Angular, Node.js, Laravel — über drei Jahre Berufserfahrung</dd>
+      <dd>PHP, JavaScript, TypeScript, Angular, Node.js, Laravel - über drei Jahre Berufserfahrung</dd>
       <dt>Datenbanken</dt>
       <dd>MySQL, PostgreSQL</dd>
       <dt>Betrieb</dt>
@@ -192,7 +192,7 @@
       <dd>Firmware-Austausch auf ESP8266/ESP32, Analyse und Umbau von
           IoT-Geräten</dd>
       <dt>Dokumentation</dt>
-      <dd>Berichte, die Entwickler direkt umsetzen können — Fund,
+      <dd>Berichte, die Entwickler direkt umsetzen können - Fund,
           Reproduktion, Risiko, Fix</dd>
     </dl>
   </section>
@@ -200,11 +200,11 @@
     <h2>Qualifikation</h2>
     <ul class="creds">
       <li>
-        Cyber Security 101 (SEC1) — bestandene Prüfung
+        Cyber Security 101 (SEC1) - bestandene Prüfung
         <span class="issuer">TryHackMe · 2026 · Lernpfad vollständig absolviert</span>
       </li>
       <li>
-        Pre Security (SEC0) — bestandene Prüfung
+        Pre Security (SEC0) - bestandene Prüfung
         <span class="issuer">TryHackMe · 2026 · Lernpfad vollständig absolviert</span>
       </li>
     </ul>
