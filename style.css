@@ -155,7 +155,7 @@ h3 {
 /* Leistungen */
 .offer { margin: 0 0 2rem; }
 .offer:last-child { margin-bottom: 0; }
-.offer p { margin: 0; color: var(--ink-soft); }
+.offer p { margin: 0; }
 .offer .scope {
   font-family: var(--sans);
   font-size: 0.875rem;
