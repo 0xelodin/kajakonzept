@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KajaKonzept - Websicherheit aus Entwicklersicht</title>
-<meta name="description" content="Sicherheitsprüfungen für Webanwendungen, durchgeführt von einem Fullstack-Entwickler.  ">
+<meta name="description" content="Sicherheitsprüfungen für Webanwendungen, durchgeführt von einem Fullstack-Entwickler.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <nav>
       <a href="#leistungen">Leistungen</a>
       <a href="#praxis">Praxis</a>
-      <a href="#faehigkeiten">Fähigkeiten</a>
+      <a href="#ueber-mich">Über mich</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
@@ -93,7 +93,6 @@
         Versionsangaben, offene Dienste.
       </p>
     </div>
-  </section>
   <div class="offer">
       <h3>Von der Meldung zum geschlossenen Befund</h3>
       <p>
@@ -119,28 +118,26 @@
     </div>
   </section>
 <section id="praxis">
-    <h2>Durchgeführte Prüfungen</h2>
+    <h2>Ein Beispiel aus der Praxis</h2>
     <p class="section-lede">
       Beauftragte, schriftlich autorisierte Prüfungen an produktiv eingesetzten
       Anwendungen - keine Übungsumgebungen. Anonymisiert dargestellt.
     </p>
-<h3>Drei Prüftage, zwei Anwendungen - ein Beispiel aus der Praxis</h3>
     <p>
-      Das Unternehmen war in Sicherheitsfragen kein Anfänger. Es hatte zuvor
-      extern prüfen lassen, die Befunde lagen vor, der Pflicht war Genüge getan.
-      Trotzdem fand ich in beiden Anwendungen Kritisches: im Frontend
-      hinterlegte Zugangsdaten, über die sich das dahinterliegende System
-      erreichen ließ, und eine Kontoübernahme, die ohne Kenntnis der bisherigen
-      Zugangsdaten funktionierte.
+      Drei Prüftage über zwei Webanwendungen. Die schwersten Funde waren im
+      Frontend hinterlegte Zugangsdaten, über die sich das dahinterliegende
+      System erreichen ließ, öffentlich zugängliche Verzeichnisse
+      und eine Kontoübernahme, die ohne Kenntnis der
+      bisherigen Zugangsdaten funktionierte. Diese habe ich sofort gemeldet;
+      mit meiner Anweisung waren sie innerhalb weniger Minuten geschlossen.
     </p>
     <p>
-      Die Ursachen waren nicht exotisch. Für die Behebung der damaligen Befunde
-      blieb wenig Zeit. Seither kamen neue Funktionen hinzu, Abläufe änderten
-      sich, und ein wachsender Teil des Codes entsteht mit KI-Unterstützung,
-      ohne dass jemand dafür geschult wurde. Ein Prüfbericht beschreibt einen
-      Zeitpunkt - die Anwendung entwickelt sich danach weiter.
+      Die Ursachen waren nicht exotisch. Für die Behebung voriger Befunde
+      blieb wenig Zeit, es kamen neue Funktionen hinzu, Abläufe änderten
+      sich, und ein wachsender Teil des Codes entsteht mit KI-Unterstützung.
+      Ein Prüfbericht beschreibt einen Zeitpunkt - die Anwendung entwickelt sich danach weiter.
     </p>
-    <p>Weitere Befunde aus beiden Prüfungen:</p>
+    <p>Weitere Befunde:</p>
     <ul class="findings">
       <li>Persistentes Cross-Site-Scripting</li>
       <li>Zugriff auf fremde Datensätze über direkte Objektreferenzen</li>
@@ -152,19 +149,49 @@
     </ul>
  
     <p style="margin-top:1.5rem">
-      Die kritischen Funde habe ich sofort gemeldet; mit meiner Anweisung waren
-      sie innerhalb weniger Minuten geschlossen. Beide Prüfungen sind als
-      nachvollziehbarer Bericht dokumentiert, mit Reproduktionsschritten und
+      Dokumentiert als nachvollziehbarer Bericht mit Reproduktionsschritten und
       priorisierten Maßnahmen. Für die Aufklärungsphase habe ich mir eigene
       Skripte gebaut (<code>recon.sh</code>, <code>parse_findings.py</code>), um
       die Ergebnisse verschiedener Werkzeuge zusammenzuführen.
+    </p>
+  </section>
+  <section id="ueber-mich">
+    <h2>Über mich</h2>
+    <p>
+      Ich habe mehrere Jahre Anwendungen entwickelt. Heute prüfe ich sie.
+      Über mehrere Jahre habe ich Anwendungen mit verschiedenen Programmiersprachen
+      und Frameworks entwickelt, darunter PHP, Laravel und Angular, mit relationalen
+      Datenbanken und Linux-Serverarchitekturen.
+    </p>
+    <p>
+      Zum Prüfen bin ich nicht über ein Zertifikat gekommen, sondern über den
+      eigenen Code. Mir fielen beim Entwickeln Stellen auf, die sich anders
+      benutzen ließen, als sie gemeint waren, und ich habe sie angesprochen,
+      bevor Sicherheit zu meinen Aufgaben gehörte. Daraus wurden beauftragte
+      Prüfungen, und aus diesen ein Konzept: Ich habe einen wiederkehrenden
+      Prüfprozess entwickelt und dokumentiert. Welche Systeme in welchen
+      Abständen geprüft werden, nach welchen Kriterien, mit welchen Methoden,
+      und wie der Bericht aussieht. Methodisch gestützt auf das
+      BSI-Durchführungskonzept für Penetrationstests und den OWASP Web Security
+      Testing Guide.
+    </p>
+    <p>
+      Dabei habe ich auch gesehen, wo Prüfung von innen an Grenzen stößt. Intern
+      lässt sich häufig, günstig und über alle Releases hinweg prüfen; bekannte
+      Fehlerklassen und Rückfälle findet man so zuverlässig. Aber wer die
+      Architektur selbst gebaut hat, prüft die eigenen Annahmen mit, und blinde
+      Flecken bleiben blind. Es bleibt nicht immer Zeit, neben neuen Anforderungen
+      und Features den bestehenden Code vollumfänglich zu prüfen. Ein Blick von
+      außen prüft genau diese Annahmen, findet Kombinationen, an die intern niemand
+      denkt, und liefert einen Nachweis, den man Kunden und Auditoren vorlegen kann.
     </p>
   </section>
   <section id="faehigkeiten">
     <h2>Fähigkeiten</h2>
     <dl class="skills">
       <dt>Entwicklung</dt>
-      <dd>PHP, JavaScript, TypeScript, Angular, Node.js, Laravel - über drei Jahre Berufserfahrung</dd>
+      <dd>PHP, Laravel, JavaScript, TypeScript, Angular, SQL - über drei Jahre
+          Berufserfahrung</dd>
       <dt>Datenbanken</dt>
       <dd>MySQL, PostgreSQL</dd>
       <dt>Betrieb</dt>
@@ -172,10 +199,10 @@
           TLS-Konfiguration</dd>
       <dt>Netzwerk</dt>
       <dd>VLAN-Segmentierung auf Managed Switches, Firewall-Regeln mit ufw und
-          iptables, DNS-Filterung, Wireguard-basierte Fernzugriffe</dd>
+          iptables, DNS-Filterung, Tailscale-basierte Fernzugriffe</dd>
       <dt>Sicherheitstests</dt>
       <dd>Manuelles Testen von Webanwendungen entlang des OWASP Web Security
-          Testing Guide, Burp Suite, nmap, gobuster, testssl, git-dumper, Metasploit</dd>
+          Testing Guide, Burp Suite, nmap, gobuster, testssl, git-dumper</dd>
       <dt>Schwachstellen</dt>
       <dd>Zugriffskontrolle und IDOR, XSS, unsichere Datei-Uploads,
           JWT- und Session-Fehler, offengelegte Repositories und
@@ -187,7 +214,7 @@
       <dd>Bash und Python für Aufklärung und Auswertung eigener
           Prüfwerkzeuge</dd>
       <dt>Hardware</dt>
-      <dd>Firmware-Austausch auf ESP8266/ESP32, Analyse und Umbau von
+      <dd>Firmware auf ESP8266/ESP32, Analyse und Umbau von
           IoT-Geräten</dd>
       <dt>Dokumentation</dt>
       <dd>Berichte, die Entwickler direkt umsetzen können - Fund,
@@ -210,7 +237,7 @@
       Beide Prüfungen sind praktisch aufgebaut: gelöst wird in Laborumgebungen,
       nicht im Multiple-Choice-Verfahren. Inhaltlich reichen sie von Netzwerk-
       und Web-Grundlagen über Angriffstechniken bis zu Log-Auswertung,
-      Active Directory und forensischer Analyse mit SIEM Anwendungen für SOC.
+      Active Directory und forensischer Analyse mit SIEM-Anwendungen für SOC.
     </p>
     <p style="margin-top:1rem">
       Laufend: AI Security (AI1) sowie Vorbereitung auf das OSCP.
