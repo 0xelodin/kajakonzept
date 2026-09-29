@@ -151,10 +151,6 @@ h3 {
 /* Aufhänger-Abschnitt */
 .hook p { margin: 0 0 1rem; }
 .hook p:last-child { margin-bottom: 0; }
-.hook .hook-open {
-  font-size: 1.125rem;
-  line-height: 1.6;
-}
 
 /* Leistungen */
 .offer { margin: 0 0 2rem; }
