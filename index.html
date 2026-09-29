@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KajaKonzept - Websicherheit aus Entwicklersicht</title>
-<meta name="description" content="Sicherheitsprüfungen für Webanwendungen, durchgeführt von einem Fullstack-Entwickler. Manuelles Testen der Anwendungslogik statt Scanner-Report.">
+<meta name="description" content="Sicherheitsprüfungen für Webanwendungen, durchgeführt von einem Fullstack-Entwickler.  ">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <h1>Sicherheitsprüfungen für Webanwendungen.</h1>
     <p class="lede">
       Ich bin Fullstack-Entwickler und Application Security Engineer und prüfe Webanwendungen auf Schwachstellen.
-      Der Unterschied zu einem automatisierten Scan: Ich lese die Anwendungslogik,
+      Der Unterschied zu einem automatisierten Scan: Ich verstehe die Anwendungslogik,
       statt nur Signaturen abzugleichen.
     </p>
 <pre class="evidence"><code>HTTP/2 200
@@ -55,7 +55,7 @@
     </p>
     <p>
       Ich prüfe Code gegen die Logik, die er eigentlich abbilden
-      soll - manuell, entlang Ihres Rollen- und Berechtigungsmodells.
+      soll entlang Ihres Rollen- und Berechtigungsmodells.
     </p>
   </section>
   <section id="leistungen">
@@ -108,8 +108,8 @@
       <p style="margin-top:1rem">
         Danach prüfe ich gerne nach. Kritische Befunde teste ich innerhalb von vier
         Wochen kostenfrei erneut. Erst danach ist ein Befund geschlossen, und
-        erst dann können Sie das gegenüber Ihren Kunden oder Ihrem Auditor auch
-        belegen.
+        erst dann kann er gegenüber Kunden oder einem Auditor auch
+        belegt werden.
       </p>
       <p class="scope">
         Welche Werkzeuge Sie dabei einsetzen, entscheiden Sie. Falls interne
@@ -121,46 +121,43 @@
 <section id="praxis">
     <h2>Durchgeführte Prüfungen</h2>
     <p class="section-lede">
-      Beides beauftragte, schriftlich autorisierte Prüfungen an produktiv
-      eingesetzten Anwendungen - keine Übungsumgebungen.
+      Beauftragte, schriftlich autorisierte Prüfungen an produktiv eingesetzten
+      Anwendungen - keine Übungsumgebungen. Anonymisiert dargestellt.
     </p>
-    <h3>ein Beispiel aus der Praxis: Penetrationstest einer Webanwendung - zwei Tage</h3>
+<h3>Drei Prüftage, zwei Anwendungen - ein Beispiel aus der Praxis</h3>
     <p>
-      Beauftragte Prüfung eines Anwendungsservers. Zwei kritische Funde
-      waren dabei nur durch Lesen zu finden. Diese konnte ich umgehend 
-      melden. Das Entwicklerteam konnte die Lücken durch meine Anweisung
-      innerhalb weniger Minuten schließen.
+      Das Unternehmen war in Sicherheitsfragen kein Anfänger. Es hatte zuvor
+      extern prüfen lassen, die Befunde lagen vor, der Pflicht war Genüge getan.
+      Trotzdem fand ich in beiden Anwendungen Kritisches: im Frontend
+      hinterlegte Zugangsdaten, über die sich das dahinterliegende System
+      erreichen ließ, und eine Kontoübernahme, die ohne Kenntnis der bisherigen
+      Zugangsdaten funktionierte.
     </p>
+    <p>
+      Die Ursachen waren nicht exotisch. Für die Behebung der damaligen Befunde
+      blieb wenig Zeit. Seither kamen neue Funktionen hinzu, Abläufe änderten
+      sich, und ein wachsender Teil des Codes entsteht mit KI-Unterstützung,
+      ohne dass jemand dafür geschult wurde. Ein Prüfbericht beschreibt einen
+      Zeitpunkt - die Anwendung entwickelt sich danach weiter.
+    </p>
+    <p>Weitere Befunde aus beiden Prüfungen:</p>
     <ul class="findings">
-      <li>Im Frontend hinterlegte Zugangsdaten mit Systemzugriff</li>
       <li>Persistentes Cross-Site-Scripting</li>
-      <li>Insecure Direct Object References - Zugriff auf fremde Datensätze</li>
+      <li>Zugriff auf fremde Datensätze über direkte Objektreferenzen</li>
       <li>Datei-Upload ohne Typ- und Pfadprüfung</li>
       <li>Fehlerhafte Verarbeitung von JSON Web Tokens</li>
+      <li>Übernahme fremder Sitzungen durch fehlerhaftes Session-Handling</li>
+      <li>Berechtigungsregeln nur im Frontend durchgesetzt</li>
       <li>Offengelegtes Repository, fehlende Security-Header</li>
     </ul>
-    <h3 class="case">Prüfung einer zweiten Anwendung - ein Tag</h3>
-    <p>
-      Schwerpunkt auf Authentifizierung, Sitzungsverwaltung und
-      Berechtigungsprüfung. Schwerwiegendster Befund: Durch Ausnutzung eines
-      unbedachten Edge-Case im Session-Handling, konnte die Funktion zum Zurücksetzen
-      des Passworts manipuliert werden. Damit ließ sich das Konto einer
-      beliebigen anderen Person übernehmen - ohne Kenntnis der bisherigen
-      Zugangsdaten.
-    </p>
-    <ul class="findings">
-      <li>Kontoübernahme über Session Manipulation und Passwort-Zurücksetzung</li>
-      <li>Übernahme fremder Sitzungen durch fehlerhaftes Session-Handling</li>
-      <li>Teilweise Bearbeitung von Datensätzen nur im Frontend
-          durchgesetzt - serverseitig ließen sich Einträge ändern.
-      </li>
-    </ul
+ 
     <p style="margin-top:1.5rem">
-      Beide Prüfungen dokumentiert als nachvollziehbarer Bericht mit
-      Reproduktionsschritten und priorisierten Maßnahmen. Für die
-      Aufklärungsphase habe ich eigene Skripte gebaut
-      (<code>recon.sh</code>, <code>parse_findings.py</code>), um Ergebnisse
-      verschiedener Tools zusammenzuführen.
+      Die kritischen Funde habe ich sofort gemeldet; mit meiner Anweisung waren
+      sie innerhalb weniger Minuten geschlossen. Beide Prüfungen sind als
+      nachvollziehbarer Bericht dokumentiert, mit Reproduktionsschritten und
+      priorisierten Maßnahmen. Für die Aufklärungsphase habe ich mir eigene
+      Skripte gebaut (<code>recon.sh</code>, <code>parse_findings.py</code>), um
+      die Ergebnisse verschiedener Werkzeuge zusammenzuführen.
     </p>
   </section>
   <section id="faehigkeiten">
